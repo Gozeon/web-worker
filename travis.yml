@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+  - "7"
+
+cache: yarn
+
+install:
+  - yarn
+
+script:
+  - yarn run lint
+
+branches:
+  only:
+    - master
