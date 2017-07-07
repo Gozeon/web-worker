@@ -16,7 +16,8 @@
     "html-webpack-plugin": "^2.29.0",
     "webpack": "^3.1.0",
     "webpack-dev-server": "^2.5.1",
-    "webpack-notifier": "^1.5.0"
+    "webpack-notifier": "^1.5.0",
+    "worker-loader": "^0.8.1"
   },
   "scripts": {
     "dev": "./node_modules/.bin/webpack-dev-server --watch --open",
