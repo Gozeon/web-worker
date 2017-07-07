@@ -9,6 +9,7 @@ install:
 
 script:
   - yarn run lint
+  - yarn run build
 
 branches:
   only:
