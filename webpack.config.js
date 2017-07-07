@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackNotifierPlugin = require('webpack-notifier');
+const webpack = require('webpack');
 
 module.exports = {
   devtool: 'eval',
@@ -8,6 +9,13 @@ module.exports = {
   output: {
     filename: 'bundle.[hash].js',
     path: path.resolve(__dirname, 'dist')
+  },
+  resolve: {
+    modules: [
+      path.join(__dirname, "src"),
+      "node_modules"
+    ],
+    extensions: ['.js']
   },
   module: {
     rules: [
@@ -22,7 +30,20 @@ module.exports = {
     new WebpackNotifierPlugin({
       title: 'Web Worker'
     }),
-    new HtmlWebpackPlugin()
+    new HtmlWebpackPlugin({
+      title: 'web-worker',
+      template: 'src/index.html'
+    }),
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        worker: {
+          output: {
+            filename: "hash.worker.js",
+            chunkFilename: "[id].hash.worker.js"
+          }
+        }
+      }
+    })
   ],
   devServer: {
     port: 9000,
