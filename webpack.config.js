@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackNotifierPlugin = require('webpack-notifier');
 const webpack = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   devtool: 'eval',
@@ -27,9 +28,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new WebpackNotifierPlugin({
-      title: 'Web Worker'
-    }),
     new HtmlWebpackPlugin({
       title: 'web-worker',
       template: 'src/index.html'
@@ -38,12 +36,22 @@ module.exports = {
       options: {
         worker: {
           output: {
-            filename: "hash.worker.js",
-            chunkFilename: "[id].hash.worker.js"
+            filename: "[hash].worker.js",
+            chunkFilename: "[id].worker.js"
           }
         }
       }
-    })
+    }),
+    new CopyWebpackPlugin([
+      { 
+        from: 'src/shared-worker.js',
+        to: 'shared-worker.js'
+      },
+      { 
+        from: 'src/shared.html',
+        to: 'shared.html'
+      }
+    ])
   ],
   devServer: {
     port: 9000,

@@ -8,6 +8,7 @@
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.1",
     "babel-preset-env": "^1.6.0",
+    "copy-webpack-plugin": "^4.0.1",
     "eslint": "^4.1.1",
     "eslint-config-airbnb-base": "^11.2.0",
     "eslint-loader": "^1.9.0",
@@ -22,6 +23,6 @@
   "scripts": {
     "dev": "./node_modules/.bin/webpack-dev-server --watch --open",
     "lint": "./node_modules/.bin/eslint src",
-    "build": "./node_modules/.bin/webpack"
+    "build": "rm -rf dist/; ./node_modules/.bin/webpack"
   }
 }
