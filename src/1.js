@@ -1,16 +1,16 @@
-self.addEventListener('message', function (e) {
-  var data = e.data;
+self.addEventListener('message', (e) => {
+  const data = e.data;
   switch (data.cmd) {
     case 'start':
-      self.postMessage('WORKER STARTED: ' + data.msg);
+      self.postMessage(`WORKER STARTED: ${data.msg}`);
       break;
 
     case 'stop':
-      self.postMessage('WORKER STOPPED: ' + data.msg + ' . (buttons will no longer work)');
+      self.postMessage(`WORKER STOPPED: ${data.msg}. (buttons will no longer work)`);
       self.close(); // Terminates the worker.
       break;
 
     default:
-      self.postMessage('Unkonow command: ' + data.msg);
+      self.postMessage(`Unkonow command: ${data.msg}`);
   }
 }, false);
