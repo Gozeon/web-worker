@@ -23,11 +23,14 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
-        use: ['babel-loader','eslint-loader']
+        use: ['babel-loader', 'eslint-loader']
       }
     ]
   },
   plugins: [
+    new WebpackNotifierPlugin({
+      title: 'web-worker'
+    }),
     new HtmlWebpackPlugin({
       title: 'web-worker',
       template: 'src/index.html'
@@ -43,14 +46,10 @@ module.exports = {
       }
     }),
     new CopyWebpackPlugin([
-      { 
-        from: 'src/shared-worker.js',
-        to: 'shared-worker.js'
-      },
-      { 
-        from: 'src/shared.html',
-        to: 'shared.html'
-      }
+      { from: 'src/shared-worker.js', to: 'shared-worker.js' },
+      { from: 'src/shared.html', to: 'shared.html' },
+      { from: 'src/1.html', to: '1.html' },
+      { from: 'src/1.js', to: '1.js' }
     ])
   ],
   devServer: {
