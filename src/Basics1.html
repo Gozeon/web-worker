@@ -31,7 +31,7 @@
       worker.postMessage({ 'cmd': 'foobard', 'msg': '???' });
     }
 
-    var worker = new Worker('1.js');
+    var worker = new Worker('Basics1.js');
 
     worker.addEventListener('message', function (e) {
       document.getElementById('result').textContent = e.data;

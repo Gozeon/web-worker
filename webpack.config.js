@@ -48,8 +48,8 @@ module.exports = {
     new CopyWebpackPlugin([
       { from: 'src/shared-worker.js', to: 'shared-worker.js' },
       { from: 'src/shared.html', to: 'shared.html' },
-      { from: 'src/1.html', to: '1.html' },
-      { from: 'src/1.js', to: '1.js' }
+      { from: 'src/Basics1.html', to: 'Basics1.html' },
+      { from: 'src/Basics1.js', to: 'Basics1.js' }
     ])
   ],
   devServer: {
