@@ -1,7 +1,7 @@
-function get(url) {
+function get(url) { // eslint-disable-line no-unused-vars
   try {
-    var xhr = new XMLHttpRequest();
-    var u = "https://html.spec.whatwg.org/demos/workers/stocks/" + url;
+    const xhr = new XMLHttpRequest();
+    const u = `https://html.spec.whatwg.org/demos/workers/stocks/${url}`;
     xhr.open('GET', u, false);
     xhr.send();
     return xhr.responseText;
