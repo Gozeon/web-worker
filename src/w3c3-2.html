@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Shared workers: demo 2</title>
+</head>
+
+<body>
+  <pre id="log">Log:</pre>
+  <script>
+    var worker = new SharedWorker('w3c3-2.js');
+    var log = document.getElementById('log');
+
+    worker.port.addEventListener('message', function (e) {
+      log.textContent += '\n' + e.data;
+    }, false);
+
+    worker.port.start(); // note: need this when using addEventListener
+    worker.port.postMessage('ping');
+
+  </script>
+</body>
+
+</html>
