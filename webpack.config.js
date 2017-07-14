@@ -67,6 +67,10 @@ module.exports = {
       { from: 'src/w3c3-3.html', to: 'w3c3-3.html' },
       { from: 'src/w3c3-3-iframe.html', to: 'w3c3-3-iframe.html' },
       { from: 'src/w3c3-3.js', to: 'w3c3-3.js' },
+
+      { from: 'src/w3c4-view.html', to: 'w3c4-view.html' },
+      { from: 'src/w3c4.html', to: 'w3c4.html' },
+      { from: 'src/w3c4.js', to: 'w3c4.js' },
     ])
   ],
   devServer: {
