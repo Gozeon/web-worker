@@ -58,7 +58,10 @@ module.exports = {
       { from: 'src/w3c2.html', to: 'w3c2.html' },
       { from: 'src/w3c2-io.js', to: 'w3c2-io.js' },
       { from: 'src/w3c2-searcher.js', to: 'w3c2-searcher.js' },
-      { from: 'src/w3c2-ticker.js', to: 'w3c2-ticker.js' }
+      { from: 'src/w3c2-ticker.js', to: 'w3c2-ticker.js' },
+
+      { from: 'src/w3c3-1.html', to: 'w3c3-1.html' },
+      { from: 'src/w3c3-1.js', to: 'w3c3-1.js' },
     ])
   ],
   devServer: {
