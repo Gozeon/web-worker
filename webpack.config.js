@@ -48,10 +48,17 @@ module.exports = {
     new CopyWebpackPlugin([
       { from: 'src/shared-worker.js', to: 'shared-worker.js' },
       { from: 'src/shared.html', to: 'shared.html' },
+
       { from: 'src/Basics1.html', to: 'Basics1.html' },
       { from: 'src/Basics1.js', to: 'Basics1.js' },
+
       { from: 'src/w3c1.html', to: 'w3c1.html' },
       { from: 'src/w3c1.js', to: 'w3c1.js' },
+
+      { from: 'src/w3c2.html', to: 'w3c2.html' },
+      { from: 'src/w3c2-io.js', to: 'w3c2-io.js' },
+      { from: 'src/w3c2-searcher.js', to: 'w3c2-searcher.js' },
+      { from: 'src/w3c2-ticker.js', to: 'w3c2-ticker.js' }
     ])
   ],
   devServer: {
