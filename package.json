@@ -21,7 +21,7 @@
     "worker-loader": "^0.8.1"
   },
   "scripts": {
-    "dev": "./node_modules/.bin/webpack-dev-server --watch --open",
+    "dev": "./node_modules/.bin/webpack-dev-server --watch",
     "lint": "./node_modules/.bin/eslint src",
     "build": "rm -rf dist/; ./node_modules/.bin/webpack"
   }
