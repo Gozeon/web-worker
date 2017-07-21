@@ -24,6 +24,7 @@
   "scripts": {
     "dev": "./node_modules/.bin/webpack-dev-server --watch",
     "lint": "./node_modules/.bin/eslint src",
-    "build": "rm -rf dist/; ./node_modules/.bin/webpack"
+    "build": "rm -rf dist/; ./node_modules/.bin/webpack",
+    "changelog": "./node_modules/.bin/conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   }
 }
